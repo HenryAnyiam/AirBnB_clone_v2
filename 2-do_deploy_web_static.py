@@ -20,7 +20,7 @@ def do_deploy(archive_path):
             new_file = archive_path.split('/')[-1]
             new_path = "/tmp/" + new_file
             new_folder = "/data/web_static/releases/" + new_file.split('.')[0]
-            put(archive_path, new_path)
+            put(archive_path, '/tmp/')
             run(f"mkdir -p {new_folder}")
             run(f"tar -xzf {new_path} -C {new_folder}")
             run(f"rm {new_path}")
