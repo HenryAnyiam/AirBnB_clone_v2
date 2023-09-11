@@ -13,6 +13,7 @@ env.key_filename = "~/.ssh/school"
 
 
 def deploy():
+    """deploy archive to a server"""
     output_file = do_pack()
     if output_file is not None:
         return do_deploy(output_file)
