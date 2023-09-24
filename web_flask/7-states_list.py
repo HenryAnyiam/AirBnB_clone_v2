@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """building AirBnB web framework"""
 from flask import Flask, render_template
-from models import storafe
+from models import storage
 from models import *
 
 
