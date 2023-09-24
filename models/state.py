@@ -30,5 +30,4 @@ class State(BaseModel, Base):
         for elem in lista:
             if (elem.state_id == self.id):
                 result.append(elem)
-        print("\n\n", result, "\n\n")
         return (result)
