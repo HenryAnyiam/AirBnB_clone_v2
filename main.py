@@ -5,6 +5,7 @@
 from models import storage
 from models.state import State
 from models.city import City
+from os import getenv
 
 """
  Objects creations
@@ -30,7 +31,7 @@ city_2_1.save()
 """
  Verification
 """
-print("")
+print("first", getenv('HBNB_TYPE_STORAGE'), "next\n\n")
 all_states = storage.all(State)
 for state_id, state in all_states.items():
     for city in state.cities:
