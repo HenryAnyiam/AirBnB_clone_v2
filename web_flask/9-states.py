@@ -9,13 +9,13 @@ from models import *
 app = Flask(__name__)
 
 
-@app.route("states/<id>", strict_slashes=False)
-@app.route("/states_list", strict_slashes=False)
+@app.route("/states/<id>", strict_slashes=False)
+@app.route("/states", strict_slashes=False)
 def list_states(id=None):
     """list out availablr states"""
     states = list(storage.all(State).values())
     states.sort(key=lambda x: x.name)
-    if (id == None)
+    if id is None:
         return render_template("7-states_list.html", states=states)
     else:
         id = escape(id)
@@ -23,7 +23,6 @@ def list_states(id=None):
             if id == i.id:
                 return render_template("9-states.html", states=i)
         return render_template("9-states.html", states="Not found!")
-
 
 
 @app.route("/cities_by_states", strict_slashes=False)
