@@ -21,8 +21,8 @@ def list_states(id=None):
         id = escape(id)
         for i in states:
             if id == i.id:
-                return render_template("9-states.html", state=i)
-        return render_template("9-states.html", state="Not found!")
+                return render_template("9-states.html", states=i)
+        return render_template("9-states.html", states="Not found!")
 
 
 
